@@ -28,14 +28,14 @@ def predict():
     prediction = loaded_model.predict([new_data])
     return jsonify({'Prediction': round(prediction[0],2)})
 
-app.route('/api/v1/retrain', methods=['POST'])
-def retrain():
-    sale = request.get_json()
-    tv = sale['tv']
-    radio = sale['radio']
-    newspaper = sale['newspaper']
-    sales = sale['sales']
-    return jsonify({'message': 'OK, Added New Data'})
+# @app.route('/api/v1/retrain', methods=['POST'])
+# def retrain():
+#     sale = request.get_json()
+#     tv = sale['tv']
+#     radio = sale['radio']
+#     newspaper = sale['newspaper']
+#     sales = sale['sales']
+#     return jsonify({'message': 'OK, Added New Data'})
 
 if __name__ == '__main__':
     app.run(debug=True) 
